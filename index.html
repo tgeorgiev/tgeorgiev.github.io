@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tony Georgiev's personal GitHub Page!</title>
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    }
+
+    .project {
+      height: 100%;
+      width: 100%;
+      padding: 100px;
+    }
+
+    h1, h2, h3 {
+      font-weight: normal;
+    }
+
+    h1 {
+      font-size: 3em;
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+
+    .project.main {
+      text-align: center;
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% { opacity: 1; }
+      50% { opacity: 0.2; }
+      100% { opacity: 1; }
+    }
+    @keyframes fadeIn {
+       0% { opacity: 1; }
+      50% { opacity: 0.2; }
+      100% { opacity: 1; }
+    }
+
+    .project.main .scroll {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+    }
+
+    .project.main .scroll img {
+      margin-bottom: -10px;
+      height: 50px;
+      -webkit-animation: fadeIn 3s 1s infinite;
+      animation: fadeIn 3s 1s infinite;
+    }
+
+    .project.main .scroll div {
+      font-size: 10px;
+    }
+
+    .project.small {
+      height: 300px
+    }
+
+    .project img {
+        height: 120px;
+    }
+
+    .scrollmagic-pin-spacer:nth-of-type(1) .project {
+      background-color: #C7E6FF;
+    }
+
+    .scrollmagic-pin-spacer:nth-of-type(2) .project {
+      background-color: #CBF1FF;
+    }
+
+    .scrollmagic-pin-spacer:nth-of-type(3) .project {
+      background-color: #FFFBDF;
+    }
+
+    .scrollmagic-pin-spacer:nth-of-type(4) .project {
+      background-color: #7DAFE8;
+    }
+
+    .scrollmagic-pin-spacer:nth-of-type(5) .project {
+      background-color: #BDE8C3;
+    }
+
+    .scrollmagic-pin-spacer:nth-of-type(6) .project {
+      background-color: #9EC3FF;
+    }
+
+  </style>
+  <script type="text/javascript" src="ScrollMagic.min.js"></script>
+
+</head>
+<body>
+  <section class="project main">
+    <h1>Tony Georgiev's personal GitHub Page!</h1>
+    <h2>Hi, I'm a software engineer. Since you landed here you can checkout the projects I contribute to</h2>
+    <div class="scroll">
+      <img src="images/down.png"/>
+      <div>Scroll down</div>
+    </div>
+  </section>
+  <section class="project">
+    <img src="https://vmware.github.io/admiral/assets/img/admiral.png"/>
+    <h2><a href="https://vmware.github.io/admiral/">
+    Project Admiral</a> - highly scalable and very lightweight Container Management platform for deploying and managing container based applications</h2>
+  </section>
+  <section class="project">
+    <img src="images/xenon.png"/>
+    <h2><a href="https://vmware.github.io/xenon/">VMware Xenon</a> - decentralized control plane framework. It provides replication, synchronization, ordering, and consistency for the state of the services. Because of the distributed nature of Xenon, the services scale well and are highly available.
+    </h2>
+  </section>
+  <section class="project">
+    <img src="images/ski-stats.png"/>
+    <h2><a href="http://tgeorgiev.github.io/skistats/">Ski stats</a> - tool for visualizing stats, based on the ski lift data. It also exposes most of it's components as reusable JavaScript components.
+    </h2>
+  </section>
+  <section class="project">
+    <img src="images/donkey-roll.png"/>
+    <h2><a href="http://tgeorgiev.github.io/lmstdr/">Let me see that Donkey Roll</a> - project that aims to bring an instant "Donkey Roll" button, just because.
+    </h2>
+  </section>
+  <section class="project">
+    <h2>As well as small contributions to <a href="https://github.com/tgeorgiev?tab=repositories">other open source projects</a></h2>
+    <h2>You can also read my blog <a href="https://tgeorgiev.com/">tgeorgiev.com</a> and find me on twitter <a href="https://twitter.com/maverix7">@maverix7</a></h2>
+  </section>
+
+  <script type="text/javascript">
+    var controller = new ScrollMagic.Controller({
+      globalSceneOptions: {
+        triggerHook: 'onLeave'
+      }
+    });
+
+    var slides = document.querySelectorAll("section.project");
+
+    for (var i = 0; i < slides.length; i++) {
+      new ScrollMagic.Scene({
+          triggerElement: slides[i]
+        })
+        .setPin(slides[i])
+        .addTo(controller);
+    }
+
+  </script>
+</body>
+</html>
